@@ -4,12 +4,15 @@ import tweepy
 from auth import api
 
 terms = ['Home Run', 'Homer', 'Dinger', 'Grand Slam']
+ 
+handles = ['MLBHR']
 
-#TODO make call to get twitter use ID and import
-handles = ['mattmeags', 'Littles_League']
-
+#stores user objects, you may not need this
 userObjArray = []
 
+#stores account IDs
+userIds = []
+
 for i in handles:
-    print api.get_user(i)
-    userObjArry.appnd(api.get_user(i))
+    userObjArray.append(api.get_user(i))
+    userIds.append(str(api.get_user(i).id))
