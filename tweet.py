@@ -5,5 +5,5 @@ from auth import api
 
 class BotFunctionality:
 
-    def ding(self):
-        api.update_status('Dinger')
+    def ding(self, player):
+        api.update_status('Dinger: ' + player)

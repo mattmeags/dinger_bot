@@ -4,7 +4,7 @@ import tweepy
 from auth import api
 
 terms = ['Home Run', 'Homer', 'Dinger', 'Grand Slam']
- 
+
 handles = ['MLBHR']
 
 #stores user objects, you may not need this

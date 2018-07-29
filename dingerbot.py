@@ -11,13 +11,14 @@ class MyStreamListener(tweepy.StreamListener):
     #we will write the tweet here
     def on_status(self, status):
         if "cubs" in status.text.lower():
+            player = status.text.split('-')[0]
+            print(player)
             bot = tweet.BotFunctionality()
-            bot.ding()
+            bot.ding(player)
 
     #Handle 420 errors - the more 420 errors longer locked out of stream
     def on_error(self, status_code):
-        print 'error'
-        print status_code
+        print(status_code)
         if status_code == 420:
             #returning False in on_data disconnects the stream
             return False
