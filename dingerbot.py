@@ -11,8 +11,17 @@ class MyStreamListener(tweepy.StreamListener):
     #we will write the tweet here
     def on_status(self, status):
         if "cubs" in status.text.lower():
+
+            #checking if a reply
+            if status.in_reply_to_screen_name != None:
+                return
+
+            #check for retweet
+            if status.text[:2] == 'RT':
+                return
+
             player = status.text.split('-')[0]
-            print(player)
+
             bot = tweet.BotFunctionality()
             bot.ding(player)
 
