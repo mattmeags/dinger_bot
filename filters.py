@@ -7,6 +7,8 @@ terms = ['Home Run', 'Homer', 'Dinger', 'Grand Slam']
 
 handles = ['MLBHR']
 
+print api.user_timeline
+
 #stores user objects, you may not need this
 userObjArray = []
 
